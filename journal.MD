@@ -16,3 +16,9 @@
 * Will spirt this part into 3 branches Data Retrieval, Data Processing, Data storage 
 * Split it up so it is easy to test.
 
+
+
+## 4/8/15:6:5
+* This first branch will be for Data Retrieval 
+* going to work on on using BS4 to get the data
+* The goal is to have a function that handles retrieving the webpage and gets something to process 
