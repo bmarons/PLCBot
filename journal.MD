@@ -52,3 +52,7 @@
 
 ## 4/10/15:11:26
 * I made a function to do a library call I think this has to do with the Law of Demeter but i am not sure why it is a good idea. Everything I know tells me to write it inline.
+
+
+## 4/10/15:11:30
+Not bad for one day of TDD will pick it up again in the morning.
