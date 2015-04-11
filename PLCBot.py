@@ -25,4 +25,21 @@ def table_ids(num_page):
 	return ids
 
 def parse_item(item_dec):
-	return
+	product = []
+	blank = ''
+	insoup = BeautifulSoup(item_dec)
+	cells = insoup.findAll('td')
+	cells.pop(2)
+	cells.pop(6)
+	for a,cell in enumerate(cells):
+		text = cell.text.strip()
+		if (a == 6):
+			if text.startswith('SLO'):
+				numbers = re.findall(r'\d+',text)
+				if (not numbers):
+					numbers.append(0)
+				text = 'SLO, Minumum ' + str(numbers[0])
+		if (text==''):
+			text = 'NULL'
+		product.append(text)
+	return product
