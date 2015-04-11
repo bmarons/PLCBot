@@ -15,3 +15,11 @@ def num_items(in_soup):
 	array = in_soup.body.findAll(text=re.compile('Total Number of Records'))
 	numbers = re.findall(r'\d+',array[0])
 	return int(numbers[0]+numbers[1])
+
+def table_ids(num_page):
+	ids = []
+	x = 12
+	for i in xrange(0,num_page):
+		ids.append(x)
+		x = x + 4
+	return ids

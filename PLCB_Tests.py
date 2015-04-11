@@ -22,7 +22,9 @@ class Test(unittest.TestCase):
 		test = PLCBot.num_items(self.tsoup)
 		self.assertEqual(test,5384)
 	def test_table_ids(self):
-		self.fail("This is a fail")
+		"""Test generating a list of table ids"""
+		test_ids = PLCBot.table_ids(25)
+		self.assertEqual(test_ids,[12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92,96,100,104,108])
 
 
 if __name__ == '__main__':
