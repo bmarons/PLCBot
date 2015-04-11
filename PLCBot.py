@@ -23,3 +23,6 @@ def table_ids(num_page):
 		ids.append(x)
 		x = x + 4
 	return ids
+
+def parse_item(item_dec):
+	return
