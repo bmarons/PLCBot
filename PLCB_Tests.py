@@ -21,6 +21,8 @@ class Test(unittest.TestCase):
 		"""This tests the function that returns the number of items on the search"""
 		test = PLCBot.num_items(self.tsoup)
 		self.assertEqual(test,5384)
+	def test_table_ids(self):
+		self.fail("This is a fail")
 
 
 if __name__ == '__main__':
