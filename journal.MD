@@ -16,3 +16,15 @@
 * Will spirt this part into 3 branches Data Retrieval, Data Processing, Data storage 
 * Split it up so it is easy to test.
 
+
+
+## 4/8/15:6:50
+* This first branch will be for Data Retrieval 
+* going to work on on using BS4 to get the data
+* The goal is to have a function that handles retrieving the webpage and gets something to process 
+* Wrote Failing Test
+
+
+## 4/8/15:7:20
+* Made the test pass and closed the branch
+* Will now work on the Data Processing branch
