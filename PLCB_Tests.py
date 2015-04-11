@@ -34,5 +34,11 @@ class Test(unittest.TestCase):
 		HTML = '<tr bgcolor="#EEEEEE" height="1"><!--td align="right" valign="middle"><b><font face=Verdana size=1><=intRecCount%></font></b></td--><td align="right" valign="middle"><a href="psi_ProductLocation_inter.asp?cdeNo=8886" target="_blank"><b><font size="1">8886</font></b></a></td><td><table width="100%"><tr><td><b><font size="1">10 Cane Rum</font></b></td></tr></table></td><td align="center" valign="middle"><b><font size="1">750 ML</font></b></td><td align="center" valign="middle"><b><font size="1"></font></b></td><td align="left" valign="middle"><b><font size="1">80</font></b></td><td align="right" valign="middle"><b><font size="1"><font size="1">17.99</font></font></b></td></tr><tr bgcolor="#EEEEEE" height="1"><!--td>&nbsp;</td--><td> </td><td align="left" valign="middle"><font size="1">Regular</font></td><td align="center" valign="middle"><font size="1">Closeout</font></td><td align="center" valign="middle"><font size="1">Spirit</font></td><td align="left" valign="middle"><font size="1">RUMS (IMPORTED)</font></td><td> </td><!--/tr></table></td--></tr>'
 		item = PLCBot.parse_item(HTML)
 		self.assertEqual(item,[u'8886', u'10 Cane Rum', u'750 ML', 'NULL', u'80', u'17.99', u'Regular', u'Closeout', u'Spirit', u'RUMS (IMPORTED)', 'NULL'])
+	def test_make_csv(self):
+		"""Tests makeing a list into a CSV"""
+		self.assertEqual("8886,10 Cane Rum,750 ML,NULL,80,17.99,Regular,Closeout,Spirit,RUMS (IMPORTED),NULL",PLCBot.make_csv([u'8886', u'10 Cane Rum', u'750 ML', 'NULL', u'80', u'17.99', u'Regular', u'Closeout', u'Spirit', u'RUMS (IMPORTED)', 'NULL']))
+
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -48,3 +48,4 @@
 ## 4/10/15:11:05
 * File I/O does not make sense in a functions since it is so simple in python
 * What does make sense is something that turns a list into a CSV string 
+* Made Test that fails

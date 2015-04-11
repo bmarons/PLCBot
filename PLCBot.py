@@ -43,3 +43,6 @@ def parse_item(item_dec):
 			text = 'NULL'
 		product.append(text)
 	return product
+def make_csv(list):
+	"""makes list into CSV"""
+	return
