@@ -9,3 +9,9 @@ def get_url(url):
 	data = page.text
 	soup = BeautifulSoup(data)
 	return soup
+
+def num_items(in_soup):
+	"""gets the number of items in the search"""
+	array = in_soup.body.findAll(text=re.compile('Total Number of Records'))
+	numbers = re.findall(r'\d+',array[0])
+	return int(numbers[0]+numbers[1])
