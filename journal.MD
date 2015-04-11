@@ -43,3 +43,8 @@
 * Parse Item was a good idea because it made me think about what I wanted
 * TDD feels the the woodworking of software, think and plan before you do
 * Going to move onto Data Storage and then stop for the night
+
+
+## 4/10/15:11:05
+* File I/O does not make sense in a functions since it is so simple in python
+* What does make sense is something that turns a list into a CSV string 
