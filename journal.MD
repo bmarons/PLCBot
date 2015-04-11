@@ -38,3 +38,8 @@
 * Made the test pass
 * Feels like I have done nothing important
 * It is like I am writing a bunch of helper functions instead of real code
+
+## 4/10/15:10:22
+* Parse Item was a good idea because it made me think about what I wanted
+* TDD feels the the woodworking of software, think and plan before you do
+* Going to move onto Data Storage and then stop for the night
