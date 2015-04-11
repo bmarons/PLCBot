@@ -33,3 +33,8 @@
 * Made the test work
 * So far this just feels like an odd way of writing code I am not sure what it helps
 * Because of all the planing I feel like I am behind on the project 
+
+## 4/10/15:9:22
+* Made the test pass
+* Feels like I have done nothing important
+* It is like I am writing a bunch of helper functions instead of real code
