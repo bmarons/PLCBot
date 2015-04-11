@@ -49,3 +49,6 @@
 * File I/O does not make sense in a functions since it is so simple in python
 * What does make sense is something that turns a list into a CSV string 
 * Made Test that fails
+
+## 4/10/15:11:26
+* I made a function to do a library call I think this has to do with the Law of Demeter but i am not sure why it is a good idea. Everything I know tells me to write it inline.

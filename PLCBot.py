@@ -45,4 +45,4 @@ def parse_item(item_dec):
 	return product
 def make_csv(list):
 	"""makes list into CSV"""
-	return
+	return ",".join(list) # some times i forget how simple python is
