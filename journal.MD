@@ -67,6 +67,13 @@ Not bad for one day of TDD will pick it up again in the morning.
 ## 4/13/15:7:20
 * Main control loop is done just need to write to file and refactor
 
+## 4/13/15:7:50
+* Trying to learn python and TDD at the some time may not have been such a great idea.
+* Today I needed to split things up so that they would not run during imports
+* This fixes how I was going to do the structure of the program.
+* Now I need to work on the search stuff
+
+
 
 
 
