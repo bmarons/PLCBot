@@ -56,3 +56,13 @@
 
 ## 4/10/15:11:30
 Not bad for one day of TDD will pick it up again in the morning.
+
+## 4/13/15:6:00
+* Had to take a few days off for family reasons but am back and ready to code
+
+## 4/13/15:6:33
+* Wrote some crap code to make sure all the functions work together.
+* Not sure if it would be a good idea to make a test that tests if they all work together, is that TDD?
+
+
+

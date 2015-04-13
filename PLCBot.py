@@ -46,3 +46,16 @@ def parse_item(item_dec):
 def make_csv(list):
 	"""makes list into CSV"""
 	return ",".join(list) # some times i forget how simple python is
+
+url = "http://www.lcbapps.lcb.state.pa.us/webapp/product_management/psi_ProductListPage_Inter.asp?strPageNum="+"1"+"&selTyp=Spirits&selTypS=&selTypW=&selTypA=&searchCode=&searchPhrase=&CostRange=&selSale=&strFilter=&prevSortby=BrndNme&sortBy=BrndNme&sortDir=ASC"
+soup = get_url(url)
+num_items = num_items(soup)
+print num_items
+ids = table_ids(num_items)
+rows = soup.findAll('tr')
+product = parse_item(str(rows[ids[0]])+str(rows[ids[0]+2]))
+print make_csv(product)
+
+
+
+

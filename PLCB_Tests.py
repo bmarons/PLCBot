@@ -23,7 +23,7 @@ class Test(unittest.TestCase):
 	def test_num_items(self):
 		"""This tests the function that returns the number of items on the search"""
 		test = PLCBot.num_items(self.tsoup)
-		self.assertEqual(test,5384)
+		self.assertEqual(test,5393)
 	def test_table_ids(self):
 		"""Test generating a list of table ids"""
 		test_ids = PLCBot.table_ids(25)
@@ -37,6 +37,7 @@ class Test(unittest.TestCase):
 	def test_make_csv(self):
 		"""Tests makeing a list into a CSV"""
 		self.assertEqual("8886,10 Cane Rum,750 ML,NULL,80,17.99,Regular,Closeout,Spirit,RUMS (IMPORTED),NULL",PLCBot.make_csv([u'8886', u'10 Cane Rum', u'750 ML', 'NULL', u'80', u'17.99', u'Regular', u'Closeout', u'Spirit', u'RUMS (IMPORTED)', 'NULL']))
+
 
 
 
