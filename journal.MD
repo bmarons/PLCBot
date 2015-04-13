@@ -64,5 +64,9 @@ Not bad for one day of TDD will pick it up again in the morning.
 * Wrote some crap code to make sure all the functions work together.
 * Not sure if it would be a good idea to make a test that tests if they all work together, is that TDD?
 
+## 4/13/15:7:20
+* Main control loop is done just need to write to file and refactor
+
+
 
 
