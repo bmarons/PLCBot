@@ -38,7 +38,8 @@ class Test(unittest.TestCase):
 		"""Tests makeing a list into a CSV"""
 		self.assertEqual("8886,10 Cane Rum,750 ML,NULL,80,17.99,Regular,Closeout,Spirit,RUMS (IMPORTED),NULL",PLCBot.make_csv([u'8886', u'10 Cane Rum', u'750 ML', 'NULL', u'80', u'17.99', u'Regular', u'Closeout', u'Spirit', u'RUMS (IMPORTED)', 'NULL']))
 
-
+	def test_read_file(self):
+		self.fail()
 
 
 if __name__ == '__main__':

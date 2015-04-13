@@ -48,6 +48,9 @@ def make_csv(list):
 	"""makes list into CSV"""
 	return ",".join(list) # some times i forget how simple python is
 
+def read_file
+	"""Reads a file into a list so it can be searched"""
+	
 
 
 
