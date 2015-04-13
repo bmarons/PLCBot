@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-
+import sys
 
 def get_url(url):
 	"""Returns Soup Object of the given URL"""
@@ -47,20 +47,17 @@ def make_csv(list):
 	"""makes list into CSV"""
 	return ",".join(list) # some times i forget how simple python is
 
+
+f = open(sys.argv[1],'w')
 url = "http://www.lcbapps.lcb.state.pa.us/webapp/product_management/psi_ProductListPage_Inter.asp?strPageNum="+"1"+"&selTyp=Spirits&selTypS=&selTypW=&selTypA=&searchCode=&searchPhrase=&CostRange=&selSale=&strFilter=&prevSortby=BrndNme&sortBy=BrndNme&sortDir=ASC"
 soup = get_url(url)
 num_items = num_items(soup)
-print float(num_items/25)
 items_retrived = 0
-
-print num_items%25
 
 if (num_items%25 ==0):
 	pages = num_items/25
 else:
 	pages = (num_items/25)+1
-
-print pages
 
 for j in xrange(1,pages+1):
 
@@ -72,14 +69,13 @@ for j in xrange(1,pages+1):
 	else:
 		ids = table_ids(num_items - items_retrived)
 	rows = soup.findAll('tr')
-	#print ids[1]
-	#print rows[12]
 	for count in xrange(0,len(ids)):
-		#print ids[count]
-		#print count
 		product = parse_item(str(rows[ids[count]])+str(rows[ids[int(count)]+2]))
-		print make_csv(product)
+		clean_string = make_csv(product)
+		print clean_string
+		f.write(clean_string+"\n")
 	items_retrived = items_retrived + 25
+
 
 
 
