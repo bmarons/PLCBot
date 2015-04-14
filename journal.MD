@@ -92,5 +92,9 @@ Not bad for one day of TDD will pick it up again in the morning.
 * think I should be writing more test but the functions are simple
 * I am really not sure if i am doing this right but i have a cool app so i got that going for me
 
-## 4/13/15:11:15
+## 4/13/15:11:30
 * Added more test and they all pass
+
+
+## 4/13/15:11:35
+* will make front-end in the morning
