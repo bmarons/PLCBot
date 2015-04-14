@@ -24,6 +24,7 @@ for j in xrange(1,pages+1):
 	for count in xrange(0,len(ids)):
 		product = PLCBot.parse_item(str(rows[ids[count]])+str(rows[ids[int(count)]+2]))
 		clean_string = PLCBot.make_csv(product)
+		clean_string = clean_string.encode('ascii', 'ignore').decode('ascii')
 		print clean_string
 		f.write(clean_string+"\n")
 	items_retrived = items_retrived + 25

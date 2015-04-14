@@ -2,6 +2,7 @@
 
 ## Pretest
 * unittest will be used for all testing
+* source code of PLCB pages makes no sense no comments no labels no ids
 
 
 ## 4/10/15:6:20
@@ -107,3 +108,5 @@ Not bad for one day of TDD will pick it up again in the morning.
 * All tests now use Dummy pages because PLCB kept changing the number of products
 * as a result since all pages are static tests run much faster.
 
+## 4/14/15:3:14
+* meeting went well worth about it in the write up
