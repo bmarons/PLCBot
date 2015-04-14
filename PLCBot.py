@@ -56,8 +56,12 @@ def read_file(filename):
 			Product_ID,Name,Size,Vintage,Proof,Price,Avaliblity,Stock_Type,Spirit,Type,Vender_ID = line.strip().split(',')
 			ret.append((Product_ID,Name,Size,Vintage,Proof,Price,Avaliblity,Stock_Type,Spirit,Type,Vender_ID))
 	return ret
-def search_type(list,search):
-	return
+def search_type(inlist,search):
+	ret = []
+	for item in inlist:
+		if search in item[9]:
+			ret.append(item)
+	return ret
 
 
 

@@ -76,6 +76,10 @@ Not bad for one day of TDD will pick it up again in the morning.
 ## 4/13/15:10:20
 * Made a failing test
 
+## 4/13/15:10:50
+* Made the test pass
+
+
 
 
 

@@ -44,7 +44,9 @@ class Test(unittest.TestCase):
 		self.assertEqual(test,comp)
 
 	def test_search_type(self):
-		self.fail()
+		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
+		answer = [('8886', '10 Cane Rum', '750 ML', 'NULL', '80', '17.99', 'Regular', 'Closeout', 'Spirit', 'RUMS (IMPORTED)', 'NULL')]
+		self.assertEqual(PLCBot.search_type(test_list, "RUM"),answer)
 
 if __name__ == '__main__':
     unittest.main()
