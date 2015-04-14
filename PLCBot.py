@@ -63,8 +63,22 @@ def search_type(inlist,search):
 			ret.append(item)
 	return ret
 
-def search_price(inlist,price):
-	return 
+def search_price(inlist,price,over):
+	ret = []
+	if (over):
+		for item in inlist:
+			if float(item[5]) >= price :
+				ret.append(item)
+	else:
+		for item in inlist:
+			if float(item[5]) < price :
+				ret.append(item)
+	return ret
 
-
+def search_price_range(inlist,low,high):
+	ret = []
+	for item in inlist:
+		if float(item[5]) < high and float(item[5]) > low:
+				ret.append(item)
+	return ret
 
