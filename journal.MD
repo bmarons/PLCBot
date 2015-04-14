@@ -73,6 +73,8 @@ Not bad for one day of TDD will pick it up again in the morning.
 * This fixes how I was going to do the structure of the program.
 * Now I need to work on the search stuff
 
+## 4/13/15:10:20
+* Made a failing test
 
 
 

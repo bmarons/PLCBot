@@ -43,6 +43,8 @@ class Test(unittest.TestCase):
 		test = PLCBot.read_file("TestFile.txt")
 		self.assertEqual(test,comp)
 
+	def test_search_type(self):
+		self.fail()
 
 if __name__ == '__main__':
     unittest.main()
