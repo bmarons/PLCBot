@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 class Test(unittest.TestCase):
 
 	def setUp(self):
-		page  = requests.get("http://www.lcbapps.lcb.state.pa.us/webapp/product_management/psi_ProductListPage_Inter.asp?strPageNum="+"1"+"&selTyp=Spirits&selTypS=&selTypW=&selTypA=&searchCode=&searchPhrase=&CostRange=&selSale=&strFilter=&prevSortby=BrndNme&sortBy=BrndNme&sortDir=ASC")
+		page  = requests.get("http://blue.betadevbox.com/test.html")
 		data = page.text
 		soup = BeautifulSoup(data)
 		self.tsoup = soup
@@ -23,7 +23,7 @@ class Test(unittest.TestCase):
 	def test_num_items(self):
 		"""This tests the function that returns the number of items on the search"""
 		test = PLCBot.num_items(self.tsoup)
-		self.assertEqual(test,5393)
+		self.assertEqual(test,5391)
 	def test_table_ids(self):
 		"""Test generating a list of table ids"""
 		test_ids = PLCBot.table_ids(25)
@@ -47,6 +47,11 @@ class Test(unittest.TestCase):
 		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
 		answer = [('8886', '10 Cane Rum', '750 ML', 'NULL', '80', '17.99', 'Regular', 'Closeout', 'Spirit', 'RUMS (IMPORTED)', 'NULL')]
 		self.assertEqual(PLCBot.search_type(test_list, "RUM"),answer)
+
+	def test_search_type_lower(self):
+		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
+		answer = [('8886', '10 Cane Rum', '750 ML', 'NULL', '80', '17.99', 'Regular', 'Closeout', 'Spirit', 'RUMS (IMPORTED)', 'NULL')]
+		self.assertEqual(PLCBot.search_type(test_list, "rum"),answer)
 
 	def test_search_price_under(self):
 		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]

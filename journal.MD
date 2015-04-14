@@ -98,3 +98,12 @@ Not bad for one day of TDD will pick it up again in the morning.
 
 ## 4/13/15:11:35
 * will make front-end in the morning
+
+## 4/14/15:1:00
+* Made a small front end to interact with the list nothing fancy because I will use grep in real life
+* Going to fake stakeholder meeting I set up with friends
+
+## 4/14/15:1:10
+* All tests now use Dummy pages because PLCB kept changing the number of products
+* as a result since all pages are static tests run much faster.
+

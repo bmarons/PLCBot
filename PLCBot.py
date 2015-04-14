@@ -38,7 +38,7 @@ def parse_item(item_dec):
 				numbers = re.findall(r'\d+',text)
 				if (not numbers):
 					numbers.append(0)
-				text = 'SLO, Minumum ' + str(numbers[0])
+				text = 'SLO Minumum ' + str(numbers[0])
 		if (text==''):
 			text = 'NULL'
 		product.append(text)
@@ -59,7 +59,7 @@ def read_file(filename):
 def search_type(inlist,search):
 	ret = []
 	for item in inlist:
-		if search in item[9]:
+		if search.upper() in item[9]:
 			ret.append(item)
 	return ret
 
