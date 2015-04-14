@@ -39,7 +39,9 @@ class Test(unittest.TestCase):
 		self.assertEqual("8886,10 Cane Rum,750 ML,NULL,80,17.99,Regular,Closeout,Spirit,RUMS (IMPORTED),NULL",PLCBot.make_csv([u'8886', u'10 Cane Rum', u'750 ML', 'NULL', u'80', u'17.99', u'Regular', u'Closeout', u'Spirit', u'RUMS (IMPORTED)', 'NULL']))
 
 	def test_read_file(self):
-		self.fail()
+		comp = [('8886', '10 Cane Rum', '750 ML', 'NULL', '80', '17.99', 'Regular', 'Closeout', 'Spirit', 'RUMS (IMPORTED)', 'NULL'), ('34361', '123 Tequila Anejo Organic 80 Proof', '750 ML', 'NULL', 'NULL', '63.99', 'Luxury', 'NULL', 'Spirit', 'TEQUILA', 'NULL'), ('34360', '123 Tequila Blanco Organic 80 Proof', '750 ML', 'NULL', 'NULL', '42.99', 'Luxury', 'NULL', 'Spirit', 'TEQUILA', 'NULL')]
+		test = PLCBot.read_file("TestFile.txt")
+		self.assertEqual(test,comp)
 
 
 if __name__ == '__main__':

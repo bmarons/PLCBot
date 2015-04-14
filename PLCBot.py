@@ -48,9 +48,14 @@ def make_csv(list):
 	"""makes list into CSV"""
 	return ",".join(list) # some times i forget how simple python is
 
-def read_file
+def read_file(filename):
 	"""Reads a file into a list so it can be searched"""
-	
+	ret = []
+	with open(filename, 'r') as f:
+		for line in f.readlines():
+			Product_ID,Name,Size,Vintage,Proof,Price,Avaliblity,Stock_Type,Spirit,Type,Vender_ID = line.strip().split(',')
+			ret.append((Product_ID,Name,Size,Vintage,Proof,Price,Avaliblity,Stock_Type,Spirit,Type,Vender_ID))
+	return ret
 
 
 
