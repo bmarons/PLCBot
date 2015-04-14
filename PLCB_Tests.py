@@ -48,5 +48,8 @@ class Test(unittest.TestCase):
 		answer = [('8886', '10 Cane Rum', '750 ML', 'NULL', '80', '17.99', 'Regular', 'Closeout', 'Spirit', 'RUMS (IMPORTED)', 'NULL')]
 		self.assertEqual(PLCBot.search_type(test_list, "RUM"),answer)
 
+	def test_search_price(self):
+		self.fail()
+
 if __name__ == '__main__':
     unittest.main()
