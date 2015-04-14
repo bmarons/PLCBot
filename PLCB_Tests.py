@@ -24,10 +24,26 @@ class Test(unittest.TestCase):
 		"""This tests the function that returns the number of items on the search"""
 		test = PLCBot.num_items(self.tsoup)
 		self.assertEqual(test,5391)
+
 	def test_table_ids(self):
 		"""Test generating a list of table ids"""
 		test_ids = PLCBot.table_ids(25)
 		self.assertEqual(test_ids,[12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92,96,100,104,108])
+
+	def test_table_ids_other(self):
+		"""Test generating a list of table ids"""
+		test_ids = PLCBot.table_ids(20)
+		self.assertEqual(test_ids,[12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88])
+
+	def test_table_ids_1(self):
+		"""Test generating a list of table ids"""
+		test_ids = PLCBot.table_ids(1)
+		self.assertEqual(test_ids,[12])
+
+	def test_table_ids_1(self):
+		"""Test generating a list of table ids"""
+		test_ids = PLCBot.table_ids(-1)
+		self.assertEqual(test_ids,[])
 
 	def test_parse_item(self):
 		"""This tests the parseing of HTML Items"""
@@ -48,10 +64,20 @@ class Test(unittest.TestCase):
 		answer = [('8886', '10 Cane Rum', '750 ML', 'NULL', '80', '17.99', 'Regular', 'Closeout', 'Spirit', 'RUMS (IMPORTED)', 'NULL')]
 		self.assertEqual(PLCBot.search_type(test_list, "RUM"),answer)
 
-	def test_search_type_lower(self):
+	def test_search_type_num(self):
+		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
+		answer = []
+		self.assertEqual(PLCBot.search_type(test_list, "PineApplePineApplePineApplePineApplePineApplePineApplePineApple22CATS"),answer)
+
+	def test_search_type_lowercase(self):
 		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
 		answer = [('8886', '10 Cane Rum', '750 ML', 'NULL', '80', '17.99', 'Regular', 'Closeout', 'Spirit', 'RUMS (IMPORTED)', 'NULL')]
 		self.assertEqual(PLCBot.search_type(test_list, "rum"),answer)
+
+	def test_search_type_none(self):
+		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
+		answer =[]
+		self.assertEqual(PLCBot.search_type(test_list, "dkaskjdhasdhDCBNZXNMCBZXMNCBIR	IQURYUR"),answer)
 
 	def test_search_price_under(self):
 		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
@@ -67,6 +93,11 @@ class Test(unittest.TestCase):
 		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
 		answer =[]
 		self.assertEqual(PLCBot.search_price(test_list, 100,True),answer)
+	
+	def test_search_price_under_none_neg(self):
+		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
+		answer =[]
+		self.assertEqual(PLCBot.search_price(test_list, -120,False),answer)
 
 	def test_search_price_over(self):
 		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
@@ -82,6 +113,12 @@ class Test(unittest.TestCase):
 		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
 		answer =[]		
 		self.assertEqual(PLCBot.search_price_range(test_list,100,200),answer)
+
+	def test_search_price_range_none_neg(self):
+		test_list = [('8886','10 Cane Rum','750 ML','NULL','80','17.99','Regular','Closeout','Spirit','RUMS (IMPORTED)','NULL'),('545382','2 Gingers Irish Whiskey 80 Proof','1 L','NULL','80','22.79','SLO', 'Minumum 12','NULL','Spirit','IRISH WHISKEY','8060'),('5242','99 Blackberries Schnapps','750 ML','NULL','99','10.99','Regular','Closeout','Spirit','SCHNAPPS - OTHER (U.S.)','NULL'),('71195','Aberlour Single Malt Single Malt Scotch 16 Year Old 86 Proof','750 ML','NULL','86','70.09','SLO', 'Minumum 6','NULL','Spirit','SINGLE MALT SCOTCH','8060')]
+		answer =[]		
+		self.assertEqual(PLCBot.search_price_range(test_list,-100,-200),answer)
+
 
 if __name__ == '__main__':
     unittest.main()

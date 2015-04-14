@@ -110,3 +110,6 @@ Not bad for one day of TDD will pick it up again in the morning.
 
 ## 4/14/15:3:14
 * meeting went well worth about it in the write up
+
+## 4/14/15:4:44
+* Added more tests
