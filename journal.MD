@@ -83,5 +83,14 @@ Not bad for one day of TDD will pick it up again in the morning.
 ## 4/13/15:10:53
 * Made a failing test
 
-## 4/13/15:10:50
+## 4/13/15:11:15
 * Made the test pass
+
+## 4/13/15:11:20
+* I thin that TDD is a cool idea
+* I am starting to learn how to use it, I have now abandoned using scrap code for testing and just keep poking at the code till it works  
+* think I should be writing more test but the functions are simple
+* I am really not sure if i am doing this right but i have a cool app so i got that going for me
+
+## 4/13/15:11:15
+* Added more test and they all pass
